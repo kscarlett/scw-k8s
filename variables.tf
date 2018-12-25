@@ -13,3 +13,8 @@ variable "ssh_ip" {
   default     = ["0.0.0.0/0"]
   description = "IP addresses to be allowed access to SSH"
 }
+
+variable "nodes" {
+  default     = 3
+  description = "The amount of nodes to be started"
+}

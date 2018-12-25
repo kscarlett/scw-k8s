@@ -3,9 +3,14 @@ variable "region" {
   description = "Values: par1 ams1"
 }
 
-variable "server_type" {
+variable "node_server_type" {
   default     = "START1-S"
-  description = "Server type to use - for a list of available options:"
+  description = "Server type to use for the nodes - for a list of available options:"
+}
+
+variable "master_server_type" {
+  default     = "START1-S"
+  description = "Server type to use for the master - for a list of available options:"
 }
 
 variable "ssh_ip" {

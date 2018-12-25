@@ -5,5 +5,5 @@ resource "scaleway_server" "node" {
   type                = "${var.server_type}"
   tags                = ["k8s", "k8s-worker", "${terraform.workspace}", "${terraform.workspace}-node"]
   dynamic_ip_required = true
-  security_group      = "${scaleway_security_group.test_sec_group.id}"
+  security_group      = "${scaleway_security_group.node_sec_group.id}"
 }

@@ -1,6 +1,6 @@
-resource "scaleway_security_group" "test_sec_group" {
-  name                    = "test"
-  description             = "Terraform test security group"
+resource "scaleway_security_group" "node_sec_group" {
+  name                    = "${terraform.workspace}-node"
+  description             = "Kubernetes nodes for ${terraform.workspace} created by Terraform"
   stateful                = true
   inbound_default_policy  = "drop"
   outbound_default_policy = "accept"
@@ -8,7 +8,7 @@ resource "scaleway_security_group" "test_sec_group" {
 
 resource "scaleway_security_group_rule" "ssh_allow" {
   count          = "${length(var.ssh_ip)}"
-  security_group = "${scaleway_security_group.test_sec_group.id}"
+  security_group = "${scaleway_security_group.node_sec_group.id}"
 
   action    = "accept"
   direction = "inbound"

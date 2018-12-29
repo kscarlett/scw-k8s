@@ -5,12 +5,12 @@ variable "region" {
 
 variable "node_server_type" {
   default     = "START1-S"
-  description = "Server type to use for the nodes - for a list of available options:"
+  description = "Server type to use for the nodes - for a list of available options: https://developer.scaleway.com/#servers"
 }
 
 variable "master_server_type" {
   default     = "START1-S"
-  description = "Server type to use for the master - for a list of available options:"
+  description = "Server type to use for the master - for a list of available options: https://developer.scaleway.com/#servers"
 }
 
 variable "ssh_ip" {
